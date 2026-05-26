@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Card Effect</title>
+    
+  </head>
+  <body>
+   
+    <!-- ✅ Background Video -->
+    <video 
+    class="bg-video" src="img-vdo/final - Made with Clipchamp.mp4" autoplay muted loop playsinline></video>
+<!-- <img class="bg-img" src="img-vdo/ligthbg.png" alt=""> -->
+    <section>
+      <div class="cotent">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img id="three" onclick="zoomin(); three();" src="img-vdo/cartp.jpeg" alt="" />
+            </div>
+            
+            <div class="swiper-slide">
+              <img id="two" onclick="zoomin(); two();" src="img-vdo/thr.jpeg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img id="one" onclick="zoomin(); one();" src="img-vdo/old.png" alt="" />
+            </div>
+           
+          </div>
+        </div>
+      </div>
+
+      <ul class="circles">
+        <li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li>
+      </ul>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ 
+    <script src="app.js"></script>
+  </body>
+</html>

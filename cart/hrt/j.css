@@ -1,0 +1,107 @@
+
+body {
+  margin: 0;
+  background-color: #000;
+  overflow: hidden;
+  background-repeat: no-repeat;
+ 
+}
+.contentlock{
+ animation: blurani 2s infinite;
+  filter: blur(20px);
+}
+@keyframes blurani {
+  0%{
+    filter: blur(40px);
+  }
+   50%{
+    filter: blur(100px);
+  }
+   100%{
+    filter: blur(40px);
+  }
+}
+canvas {
+  display: block;
+  width: 100vw;
+  z-index: 1;
+  height: 100vh;
+}
+#centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-style: normal;
+  font-size: 2rem;
+  color: white;
+  z-index: 10;
+  pointer-events: none; /* allows clicks to pass through */
+  text-align: center;
+  
+
+
+}
+
+
+.heart {
+  width: 100px;
+  height: 100px;
+  background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
+  
+}
+
+.heart.is-active{
+  animation: shake 0.2s;
+}
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      50% { transform: translateX(10px); }
+      75% { transform: translateX(-10px); }
+      100% { transform: translateX(0); }
+    }
+
+
+.stage {
+  position: fixed;
+  top: 50%;
+  z-index: 10;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.text{
+  width: 100vh;
+  position: absolute;
+color: white;
+ font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-style: normal;
+  font-size: 4vh;
+  text-align: center;   
+  left: -43vh;
+  opacity: 0;
+}
+.text.active{
+  animation: opac 7s forwards;
+}
+@keyframes opac {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+
+  }
+  100%{
+    opacity: 0;
+  }
+}

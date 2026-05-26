@@ -1,0 +1,148 @@
+.header {
+  height: 1000vh;
+}
+
+.myimage {
+  /* 1:57+ */
+  position:fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  width: 100%;
+  z-index: 3;
+}
+.myvdo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  aspect-ratio: 16 / 9; /* match your video ratio */
+  max-height: 95%;      /* control screen height */
+  max-width: 100%;       /* ensures no width overflow */
+  
+  object-fit: contain;  /* no cropping, keeps whole video */
+  opacity: 0;
+  z-index: 6;
+  border: 4px solid #111;
+  border-radius: 6px;
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.1),
+    0 0 10px rgba(0, 0, 0, 0.8) inset;
+  background: black; /* fills empty space */
+}
+
+
+.myvdo-visible{
+    animation: visiblecurtain 1s forwards;
+}
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+}
+.click {
+  color: white;
+  position: fixed; /* stays in center even when scrolling */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  font-size: 3vh;
+  opacity: 0.6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   animation: visiblecurtain 1s 1s forwards reverse; 
+
+}
+
+
+.theater {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+
+/* Curtain common style */
+.curtain {
+  position: fixed;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: url('img/ChatGPT\ Image\ Aug\ 13\,\ 2025\,\ 10_54_20\ AM.png') center/cover no-repeat;
+  z-index: 7;
+  transition: transform 2s ease-in-out;
+  opacity: 0;
+}
+
+/* Left curtain starting position */
+.curtain.left {
+  left: 0;
+}
+
+/* Right curtain starting position */
+.curtain.right {
+  right: 0;
+}
+.wall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/red-velvet-wall.png');
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  z-index: 5;
+  opacity: 0;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.8); /* dark inner edges */
+}
+
+.wall-visible{
+  
+    animation: visiblecurtain 1s  forwards;
+}
+
+/* Animation trigger class */
+.open-curtains .curtain.left {
+    animation: visiblecurtain 1s forwards;
+  transform: translateX(-100%);
+  
+}
+
+.open-curtains .curtain.right {
+    animation: visiblecurtain 1s forwards;
+  transform: translateX(100%);
+ 
+}
+@keyframes visiblecurtain {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.jumbotron {
+  position: relative;
+  background-color: unset;
+  margin-top: 150px;
+  z-index: 999;
+}
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px; /* width of scrollbar */
+}
+
+
+
+
+
+/* Firefox */
+html {
+  /* scrollbar-width: thin;  */
+  scrollbar-color: pink #340905; /* thumb color, track color */
+  ;
+}
